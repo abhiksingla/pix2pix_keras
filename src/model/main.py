@@ -18,10 +18,10 @@ if __name__ == "__main__":
     parser.add_argument('patch_size', type=int, nargs=2, action="store", help="Patch size for D")
     parser.add_argument('--backend', type=str, default="tensorflow", help="theano or tensorflow")
     parser.add_argument('--generator', type=str, default="upsampling", help="upsampling or deconv")
-    parser.add_argument('--dset', type=str, default="depth", help="facades")
+    parser.add_argument('--dset', type=str, default="iros", help="facades")
     parser.add_argument('--batch_size', default=4, type=int, help='Batch size')
-    parser.add_argument('--n_batch_per_epoch', default=100, type=int, help="Number of training epochs")
-    parser.add_argument('--nb_epoch', default=200, type=int, help="Number of batches per epoch")#400
+    parser.add_argument('--n_batch_per_epoch', default=1000, type=int, help="Number of batches per epoch")
+    parser.add_argument('--nb_epoch', default=40, type=int, help="Number of training epochs")#400
     parser.add_argument('--epoch', default=10, type=int, help="Epoch at which weights were saved for evaluation")
     parser.add_argument('--nb_classes', default=2, type=int, help="Number of classes")
     parser.add_argument('--do_plot', action="store_true", help="Debugging plot")
