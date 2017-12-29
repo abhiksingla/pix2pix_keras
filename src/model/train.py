@@ -140,9 +140,11 @@ def train(**kwargs):
         gen_loss = None
         disc_loss = None
 
-        # generator_model.load_weights("gen_weights21.h5")
-        iter_num = 1
-
+        iter_num = 17
+        weights_path = "/home/abhik/pix2pix/src/model/weights/gen_weights_iter%s_epoch20.h5" % (str(iter_num - 1))
+        print weights_path
+        generator_model.load_weights(weights_path)
+        
         #discriminator_model.load_weights("disc_weights1.2.h5")
 
         #DCGAN_model.load_weights("DCGAN_weights1.2.h5")
@@ -228,10 +230,10 @@ def train(**kwargs):
                 if batch_counter % (n_batch_per_epoch / 2) == 0:
                     # Get new images from validation
                     data_utils.plot_generated_batch(X_full_batch, X_sketch_batch, generator_model,
-                                                    batch_size, image_dim_ordering, "training")
+                                                    batch_size, image_dim_ordering, "training", iter_num)
                     X_full_batch, X_sketch_batch = next(data_utils.gen_batch(X_full_val, X_sketch_val, batch_size))
                     data_utils.plot_generated_batch(X_full_batch, X_sketch_batch, generator_model,
-                                                    batch_size, image_dim_ordering, "validation")
+                                                    batch_size, image_dim_ordering, "validation", iter_num)
 
                 if batch_counter >= n_batch_per_epoch:
                     break

@@ -124,7 +124,7 @@ def get_disc_batch(X_full_batch, X_sketch_batch, generator_model, batch_counter,
     return X_disc, y_disc
 
 
-def plot_generated_batch(X_full, X_sketch, generator_model, batch_size, image_dim_ordering, suffix):
+def plot_generated_batch(X_full, X_sketch, generator_model, batch_size, image_dim_ordering, suffix, iter_num):
 
     # Generate images
     X_gen = generator_model.predict(X_sketch)
@@ -161,6 +161,6 @@ def plot_generated_batch(X_full, X_sketch, generator_model, batch_size, image_di
     else:
         plt.imshow(Xr)
     plt.axis("off")
-    plt.savefig("../../figures/current_batch_%s.png" % suffix)
+    plt.savefig("../../figures/current_batch_%s_iter%s.png" % (suffix, str(iter_num)))
     plt.clf()
     plt.close()
