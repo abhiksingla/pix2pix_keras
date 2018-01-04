@@ -140,7 +140,7 @@ def train(**kwargs):
         gen_loss = None
         disc_loss = None
 
-        iter_num = 17
+        iter_num = 18
         weights_path = "/home/abhik/pix2pix/src/model/weights/gen_weights_iter%s_epoch20.h5" % (str(iter_num - 1))
         print weights_path
         generator_model.load_weights(weights_path)
