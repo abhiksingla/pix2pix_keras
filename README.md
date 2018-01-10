@@ -1,5 +1,7 @@
 # pix2pix
 
+## updates added, will update readme soon
+
 Keras implementation of [Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/pdf/1611.07004v1.pdf) by Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros
 
 
